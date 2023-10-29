@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<link href="~/Content/bootstrap.css" />
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: aliceblue;
+        background: url('../../images/background.jpg') no-repeat; 
+        background-size: 2000px;
+        background-position: center;
+    }
+
+    .login {
+        width: 400px;
+        height: 350px;
+        background-color: transparent;
+        border-radius: 10px;
+        padding: 20px 20px 20px 20px;
+        border-color: transparent;
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255,255,255,.2);
+    }
+
+    .h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .form-control {
+        background-color: whitesmoke;
+        border: none;
+        width: 100%;
+        height: 40px;
+    }
+
+    .btn {
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        background-color: orange;
+        border: none;
+    }
+
+    .input-box input::placeholder {
+        z-index: 1000;
+        color: #000000;
+    }
+
+    .text-center {
+        transform: translate(100px,-242px)
+    }
+
+    #login {
+        width: 400px;
+        height: 350px;
+        background-color: transparent;
+        border-radius: 10px;
+        padding: 20px 20px 20px 20px;
+        border-color: transparent;
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255,255,255,.2);
+        color: aqua;
+    }
+</style>
+<div class="login">
+    <h1 style="color:aliceblue">LOGIN</h1>
+    @using (Html.BeginForm("Login", "Users"))
+    {
+        @Html.ValidationSummary(true)
+        <div class="mb-3 justify-content-center align-content-center">
+
+            <label for="name" class="form-label" style="color:whitesmoke">Tài khoản:</label><input type="text" placeholder="Tài khoản" class="form-control" id="name" name="NameCus" required>
+        </div>
+        <div class="mb-3 justify-content-center align-content-center">
+            <label for="pwd" class="form-label" style="color:whitesmoke">Mật khẩu:</label><input type="password" placeholder="Mật khẩu" class="form-control" id="pwd" name="PassCus" required>
+        </div>
+        <h3 style="color:black;">@ViewBag.ThongBao</h3>
+        <button type="submit" class="btn btn-light" style="color:cornsilk">XÁC NHẬN</button>
+        <div class="forgot">
+            <p style="color:whitesmoke">Bạn chưa có tài khoản? @Html.ActionLink("Đăng ký", "Register")</p>
+        </div>
+
+    }
+</div>
