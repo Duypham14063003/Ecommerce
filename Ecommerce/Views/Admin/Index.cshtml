@@ -4,5 +4,43 @@
     Layout = "~/Views/Shared/_Layout-admin.cshtml";
 }
 
-<h2>Trang danh cho Admin</h2>
+<style>
+    .form{
 
+    }
+</style>
+
+<div class="container">
+    <div class="chucnang">
+        <a href="@Url.Action("Create","Admin")">
+            <button type="button" class="btn btn-success"  >Them San Pham</button>
+        </a>
+        <h3 class="text-center">Danh sách sản phẩm</h3>
+        <div class="form">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Anh</th>
+                        <th scope="col">Ten</th>
+                        <th scope="col">Mo ta</th>
+                        <th scope="col">Gia tien</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>abc</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">Xoa</button>
+                            <button type="button" class="btn btn-info">Sua</button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

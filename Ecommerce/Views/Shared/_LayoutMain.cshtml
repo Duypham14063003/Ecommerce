@@ -4,69 +4,66 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-<<<<<<< HEAD
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<<<<<<< HEAD
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-=======
-=======
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
->>>>>>> ccb461a5d9498e4c3ddda238f983c4977750bbc7
->>>>>>> 1207edcbb4a27b64d2612b1b84a1198b4e213a85
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <script src="~/Scripts/script.js"></script>
 </head>
 <style>
-    body{
+    body {
         margin: 0;
         padding: 0;
-        box-sizing:border-box;
+        box-sizing: border-box;
         overflow-x: hidden;
     }
     /*nav*/
     .nav-top {
-        position:relative;
-       background-color: rgba(225,225,225,0.4);
+        position: relative;
+        background-color: rgba(225,225,225,0.4);
         top: 0;
         position: fixed;
         width: 100%;
-        z-index:5;
+        z-index: 5;
         border-bottom: 0.5px solid #ccc;
     }
+
     .nav-ul {
         margin: 0;
         display: flex;
         justify-content: center;
         padding-bottom: 19px;
     }
+
         .nav-ul li {
             padding: 19px 16px;
             list-style: none;
             line-height: 14px;
             font-size: 14px;
             height: 35px;
-           /* transition: all ease-in-out 0.5s;*/
-        }
-        .nav-ul li a {
-                text-decoration:none;
-               color: black;
-               font-size:18px;
-               cursor: pointer;
-               transition: all ease-in-out 0.5s;
+            /* transition: all ease-in-out 0.5s;*/
         }
 
-    .nav-ul li a:hover{
-        color: #ea8025;
-    }
+            .nav-ul li a {
+                text-decoration: none;
+                color: black;
+                font-size: 18px;
+                cursor: pointer;
+                transition: all ease-in-out 0.5s;
+            }
 
-    .trangchu{
+                .nav-ul li a:hover {
+                    color: #ea8025;
+                }
+
+    .trangchu {
         text-decoration: none;
         color: black;
     }
     /*content*/
-    .content{
-        margin-top:74px;
+    .content {
+        margin-top: 74px;
     }
 
     /*footer*/
@@ -77,32 +74,35 @@
         padding: 25px 0;
     }
 
-    .footer .col{
-        font-size:14px;
-        color: #fff;
-        font-weight:600;
-        margin-bottom:16px;
-        margin-top:0;
-    }
+        .footer .col {
+            font-size: 14px;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
 
     .img-logo {
-        position:absolute;
+        position: absolute;
         margin-top: -69px;
         height: 159px;
-        left:20px;
+        left: 20px;
     }
-    .footer_title{
+
+    .footer_title {
         font-size: 14px;
-        margin-bottom:16px;
+        margin-bottom: 16px;
     }
-    .footer_link{
-        text-align:left;
+
+    .footer_link {
+        text-align: left;
     }
-    .footer_link li{
-        list-style: none;
-        font-size:12px;
-        margin-bottom: 8px;
-    }
+
+        .footer_link li {
+            list-style: none;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
 </style>
 <body>
     <div class="nav-top">
@@ -116,29 +116,26 @@
             <li><a href="/">Trà</a></li>
             <li><a href="/">Cửa Hàng</a></li>
             <li><a href="/">Giới Thiệu</a></li>
+            <li>
+                <i class="fas fa-cart-plus" style="font-size:22px"></i>
+            </li>
             <li class="button" style="right:0; position:absolute">
-<<<<<<< HEAD
-                @if (Session["Ten"] != null)
-                 {
-                    <a>@Session["Ten"]</a>
-                 }
-                else
-                {
-                    <a href="@Url.Action("Login","Users")">Đăng nhập</a>
-                }
-
-=======
-                @if (Session["Taikhoan"] == null)
+                @if (Session["Ten"] == null)
                 {
                     <a href="@Url.Action("Login", "Users")">Đăng nhập</a>
+
                 }
 
                 else
                 {
-                    <h2 id="text">welcome @Session["Taikhoan"]</h2><a class="button" style="right:0; position:absolute" href="@Url.Action("Logout","Users")">Đăng xuất</a>
+                    <a>@Session["Ten"]</a>
+                    <a class="button" style="right:0; position:absolute; margin-left:5px" href="@Url.Action("Logout","Users")">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
                 }
->>>>>>> 1207edcbb4a27b64d2612b1b84a1198b4e213a85
             </li>
+
+
         </ul>
 
     </div>
@@ -148,8 +145,6 @@
             @RenderBody()
         </div>
     </div>
-
-<<<<<<< HEAD
     <!-- Footer -->
     <footer class="text-center text-white" style="background-color: #000000D9">
         <!-- Grid container -->
@@ -161,22 +156,6 @@
                     <i class="fab fa-facebook-f"></i>
                 </a>
 
-=======
-<<<<<<< HEAD
-
-=======
-    <!-- Footer -->
-    <footer class="text-center text-white" style="background-color: #000000D9">
-        <!-- Grid container -->
-        <div class="container p-4">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-
->>>>>>> 1207edcbb4a27b64d2612b1b84a1198b4e213a85
                 <!-- Twitter -->
                 <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
                     <i class="fab fa-twitter"></i>
@@ -209,13 +188,10 @@
                     <!--Grid row-->
                     <div class="row d-flex justify-content-center">
                         <!--Grid column-->
-                       
                         <!--Grid column-->
                         <!--Grid column-->
-
                         <!--Grid column-->
                         <!--Grid column-->
-
                         <!--Grid column-->
                     </div>
                     <!--Grid row-->
@@ -327,10 +303,7 @@
         <!-- Copyright -->
     </footer>
     <!-- Footer -->
-<<<<<<< HEAD
-=======
->>>>>>> ccb461a5d9498e4c3ddda238f983c4977750bbc7
->>>>>>> 1207edcbb4a27b64d2612b1b84a1198b4e213a85
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 

@@ -13,5 +13,19 @@ namespace Ecommerce.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Product pro)
+        {
+            return View();
+        }
+
+
     }
 }
