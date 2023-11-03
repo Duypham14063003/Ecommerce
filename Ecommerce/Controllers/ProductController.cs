@@ -12,6 +12,7 @@ namespace Ecommerce.Controllers
         public ActionResult Index()
         {
             return View();
+
         }
     }
 }

@@ -258,6 +258,7 @@
     <Content Include="Views\Admin\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include=".gitignore\" />
     <Folder Include="App_Data\" />
     <Folder Include="Data\" />
   </ItemGroup>
