@@ -13,10 +13,10 @@ namespace Ecommerce.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DoAnEntities1 : DbContext
+    public partial class DoAnEntities2 : DbContext
     {
-        public DoAnEntities1()
-            : base("name=DoAnEntities1")
+        public DoAnEntities2()
+            : base("name=DoAnEntities2")
         {
         }
     

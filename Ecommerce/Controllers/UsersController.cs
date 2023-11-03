@@ -9,7 +9,7 @@ namespace DoAn.Controllers
 {
     public class UsersController : Controller
     {
-        private DoAnEntities1 database = new DoAnEntities1();
+        DoAnEntities2 database = new DoAnEntities2();
         // GET: Users
         [HttpGet]
         public ActionResult Register()
@@ -20,8 +20,7 @@ namespace DoAn.Controllers
         public ActionResult Register(Customer cust)
         {
             if (ModelState.IsValid)
-            {
-               
+            {   
                 if (string.IsNullOrEmpty(cust.NameCus))
                     ModelState.AddModelError(string.Empty, "Tên đăng nhập không được để trống");
                 if (string.IsNullOrEmpty(cust.PassCus))
@@ -30,20 +29,17 @@ namespace DoAn.Controllers
                     ModelState.AddModelError(string.Empty, "Email không được để trống");
                 if (string.IsNullOrEmpty(cust.PhoneCus))
                     ModelState.AddModelError(string.Empty, "Điện thoại không được để trống");
-                var khachhang = database.Customers.FirstOrDefault(k => k.NameCus == cust.NameCus);
-                if (khachhang != null)
-                    ViewBag.Thongbao= "Đã có người  đăng kí tên này";
+             
                 if (ModelState.IsValid)
                 {
                     database.Customers.Add(cust);
                     database.SaveChanges();
+                    return RedirectToAction("Login", "Users");
+
                 }
-                else
-                {
-                    return View();
-                }
+
             }
-            return RedirectToAction("Login","Users");
+            return View();
         }
         [HttpGet]
         public ActionResult Login()
@@ -61,11 +57,10 @@ namespace DoAn.Controllers
                     ModelState.AddModelError(string.Empty, "Mat khau khong duoc de trong");
                 if (ModelState.IsValid)
                 {
-                    var khachhang = database.Customers.
-                        FirstOrDefault(k => k.NameCus == cust.NameCus && k.PassCus == cust.PassCus);
+                    var khachhang = database.Customers.FirstOrDefault(k => k.NameCus == cust.NameCus && k.PassCus == cust.PassCus);
                     if (khachhang != null)
-                    {   
-                        Session["Taikhoan"] = khachhang.NameCus;
+                    {
+                        Session["Ten"] = khachhang.NameCus;
                         return RedirectToAction("Index", "Home");
                     }
                     else

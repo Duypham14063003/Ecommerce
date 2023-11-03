@@ -1,8 +1,9 @@
-﻿@{
+﻿@model Ecommerce.Models.AdminUser
+
+@{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
-<link href="~/Content/bootstrap.css" />
 <style>
     * {
         margin: 0;
@@ -18,7 +19,7 @@
         align-items: center;
         min-height: 100vh;
         background-color: aliceblue;
-        background: url('../../images/background.jpg') no-repeat; 
+        background: url('../../images/background.jpg') no-repeat;
         background-size: 2000px;
         background-position: center;
     }
@@ -63,7 +64,7 @@
         transform: translate(100px,-242px)
     }
 
-    #login {
+    .login {
         width: 400px;
         height: 350px;
         background-color: transparent;
@@ -95,3 +96,5 @@
 
     }
 </div>
+
+

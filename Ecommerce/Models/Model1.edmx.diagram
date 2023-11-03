@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7c3fa08a187e4e6484d8f109e0e611fe" Name="Diagram1">
+      <Diagram DiagramId="ef3efe27836341d58e462a0eea937841" Name="Diagram1">
         <EntityTypeShape EntityType="DoAnModel.AdminUser" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAnModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DoAnModel.Customer" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAnModel.Customer" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAnModel.OrderDetail" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAnModel.OrderPro" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DoAnModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="DoAnModel.FK_Pro_Category" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAnModel.FK__OrderPro__IDCus__2D27B809" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAnModel.FK__OrderDeta__IDOrd__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="DoAnModel.FK__OrderDeta__IDPro__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnModel.FK__OrderPro__IDCus__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnModel.FK__OrderDeta__IDOrd__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAnModel.FK__OrderDeta__IDPro__2F10007B" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
