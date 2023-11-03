@@ -1,8 +1,5 @@
 ﻿using Ecommerce.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DoAn.Controllers
@@ -21,7 +18,7 @@ namespace DoAn.Controllers
         {
             if (ModelState.IsValid)
             {
-               
+
                 if (string.IsNullOrEmpty(cust.NameCus))
                     ModelState.AddModelError(string.Empty, "Tên đăng nhập không được để trống");
                 if (string.IsNullOrEmpty(cust.PassCus))
@@ -32,7 +29,7 @@ namespace DoAn.Controllers
                     ModelState.AddModelError(string.Empty, "Điện thoại không được để trống");
                 var khachhang = database.Customers.FirstOrDefault(k => k.NameCus == cust.NameCus);
                 if (khachhang != null)
-                    ViewBag.Thongbao= "Đã có người  đăng kí tên này";
+                    ViewBag.Thongbao = "Đã có người  đăng kí tên này";
                 if (ModelState.IsValid)
                 {
                     database.Customers.Add(cust);
@@ -43,7 +40,7 @@ namespace DoAn.Controllers
                     return View();
                 }
             }
-            return RedirectToAction("Login","Users");
+            return RedirectToAction("Login", "Users");
         }
         [HttpGet]
         public ActionResult Login()
@@ -56,15 +53,14 @@ namespace DoAn.Controllers
             if (ModelState.IsValid)
             {
                 if (string.IsNullOrEmpty(cust.NameCus))
-                    ModelState.AddModelError(string.Empty, "Ten dang nhap nay khong duoc de trong");
+                    ModelState.AddModelError(string.Empty, "Tên đăng nhập này không được để trống");
                 if (string.IsNullOrEmpty(cust.PassCus))
-                    ModelState.AddModelError(string.Empty, "Mat khau khong duoc de trong");
+                    ModelState.AddModelError(string.Empty, "Mật khẩu không được để trống");
                 if (ModelState.IsValid)
                 {
-                    var khachhang = database.Customers.
-                        FirstOrDefault(k => k.NameCus == cust.NameCus && k.PassCus == cust.PassCus);
+                    var khachhang = database.Customers.FirstOrDefault(k => k.NameCus == cust.NameCus && k.PassCus == cust.PassCus);
                     if (khachhang != null)
-                    {   
+                    {
                         Session["Taikhoan"] = khachhang.NameCus;
                         return RedirectToAction("Index", "Home");
                     }
@@ -78,7 +74,37 @@ namespace DoAn.Controllers
         public ActionResult Logout()
         {
             Session.Clear();
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
+        [HttpGet]
+        public ActionResult LoginAdmin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult LoginAdmin(AdminUser ad)
+        {
+            if (ModelState.IsValid)
+            {
+                if (string.IsNullOrEmpty(ad.NameUser))
+                    ModelState.AddModelError(string.Empty, "Tên đăng nhập này không được để trống");
+                if (string.IsNullOrEmpty(ad.PasswordUser))
+                    ModelState.AddModelError(string.Empty, "Mật khẩu không được để trống");
+                if (ModelState.IsValid)
+                {
+                    var admin = database.AdminUsers.FirstOrDefault(s => s.NameUser == ad.NameUser && s.PasswordUser == ad.PasswordUser);
+                    if (admin != null)
+                    {
+                        Session["ADMIN"] = admin.NameUser;
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                        ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng! Vui lòng kiểm tra lại";
+                }
+
+            }
+            return View();
+        }
+
     }
 }

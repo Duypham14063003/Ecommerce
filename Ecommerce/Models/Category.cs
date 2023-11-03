@@ -26,6 +26,5 @@ namespace Ecommerce.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
-        public List<Category> ListCase { get; set; }
     }
 }
