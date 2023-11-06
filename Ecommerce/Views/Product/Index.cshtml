@@ -18,21 +18,6 @@
         });
     </script>
 </head>
-<body>
-    @{
-        Layout = "~/Views/Shared/_LayoutMain.cshtml";
-    }
-
-    <!DOCTYPE html>
-
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title></title>
-        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-        <link href="~/Content/stylesheet.css" rel="stylesheet" />
-
-    </head>
     <style>
         .active-item {
             background-color: #E57905;
@@ -80,13 +65,41 @@
         a:hover, a:active {
             color: darkorange;
         }
+
+        .add-to-cart-buy-now-btn {
+            -webkit-text-size-adjust: none;
+            visibility: visible;
+            overflow: visible;
+            line-height: 1.15;
+            margin-top: 35px;
+            margin-left: 10px;
+            text-transform: none;
+            -webkit-appearance: button;
+            border-radius: 2px;
+            transition: all .3s ease-out;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 44px;
+            font-size: 16px;
+            background: #ffb916;
+            color: #fff;
+            padding: 0;
+            width: 225px;
+            text-align: center;
+            margin-right: 10px;
+            border: 0;
+        }
     </style>
     <body>
         <div class="wholeproduct">
             <div class="container">
                 <div class="row">
                     <div class="row">
-                        <div class="col-sm"><img src="~/Images/cafe.png" class="rounded" alt="Cinque Terre" width="500" height="500"></div>
+                        <div class="col-sm"><img src="~/Images/cafe.png" class="rounded" alt="Cinque Terre" width="500" height="500" style="border-radius:35px;"></div>
                         <div class="col-sm">
                             <h2>CloudFee Hạnh Nhân Nướng</h2>
                             <h4 style=" color: #e79439">49.000 đ</h4>
@@ -138,11 +151,22 @@
                                     </th>
                                 </tr>
                             </table>
+                            <table>
+                                <tr>
+                                    <th>
+                                        <button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_yellow pdp-button_size_xl"><span class="pdp-button-text"><span class="" data-spm-anchor-id="a2o4n.pdp_revamp.0.i1.20c9516dyaN0yI">Buy Now</span></span></button>
+                                    </th>
+                                    <th>
+                                        <button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_orange pdp-button_size_xl"><span class="pdp-button-text"><span class="">Add to Cart</span></span></button>
+                                    </th>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <br />
         <br />
         <br />
@@ -177,7 +201,7 @@
             <td>
                 <div class="col">
                     <a href="">
-                        <img class="lazyloaded" src="~/Images/coldbrewsuatuoi.jpg" />
+                        <img class="lazyloaded" src="~/Images/cold-brew-sua-tuoi_379576_990956a1473e4ded82c8f76b877b7d15.jpg" />
                         <div>
                             Cold Brew Sữa Tươi
                             <div>
@@ -225,5 +249,4 @@
         </script>
     </body>
 </html>
-</body>
-</html>
+
