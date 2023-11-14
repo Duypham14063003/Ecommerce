@@ -23,7 +23,6 @@ namespace Ecommerce.Controllers
             
         }
 
-
         // xu ly phan user
         public ActionResult qlUser()
         {
