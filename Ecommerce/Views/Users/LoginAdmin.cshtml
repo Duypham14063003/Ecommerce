@@ -1,7 +1,9 @@
-﻿@{
-    ViewBag.Title = "Login";
+﻿
+@{
+    ViewBag.Title = "LoginAdmin";
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
+<script src="~/Scripts/Script.js"></script>
 <link href="~/Content/bootstrap.css" />
 <style>
 
@@ -37,32 +39,28 @@
         background-color: orange;
         border: none;
     }
-    .container-main{
-        display:flex;
-        justify-content:center;
+    .container-main {
+        display: flex;
+        justify-content: center;
     }
 </style>
-
 <div class="container-main">
     <div class="login">
-        <h1 style="color:black">ĐĂNG NHẬP</h1>
-        @using (Html.BeginForm("Login", "Users"))
+        <h1 style="color:black">ĐĂNG NHẬP ADMIN</h1>
+        @using (Html.BeginForm("LoginAdmin", "Users"))
         {
             @Html.ValidationSummary(true)
             <div class="mb-3 justify-content-center align-content-center">
-
-                <label for="name" class="form-label" style="color:black">Tài khoản:</label><input type="text" placeholder="Tài khoản" class="form-control" id="name" name="NameCus" required>
+                <label for="name" class="form-label" style="color:black">Tài khoản:</label><input type="text" placeholder="Tài khoản" class="form-control" id="name" name="NameUser" required>
             </div>
             <div class="mb-3 justify-content-center align-content-center">
-                <label for="pwd" class="form-label" style="color:black">Mật khẩu:</label><input type="password" placeholder="Mật khẩu" class="form-control" id="pwd" name="PassCus" required>
+                <label for="pwd" class="form-label" style="color:black">Mật khẩu:</label><input type="password" placeholder="Mật khẩu" class="form-control" id="pwd" name="PasswordUser" required>
             </div>
             <h3 style="color:black;">@ViewBag.ThongBao</h3>
             <button type="submit" class="btn2 btn-light" style="color:cornsilk">XÁC NHẬN</button>
-            <div class="forgot">
-                <p style="color:black">Bạn chưa có tài khoản? @Html.ActionLink("Đăng ký", "Register")</p>
-                <p style="color:black">Bạn là Admin? @Html.ActionLink("Đăng nhập", "LoginAdmin")</p>
-            </div>
 
         }
     </div>
 </div>
+
+

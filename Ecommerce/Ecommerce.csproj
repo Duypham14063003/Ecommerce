@@ -131,7 +131,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CollectionsController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -147,6 +147,7 @@
     <Compile Include="Models\Customer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,6 +191,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Error.css" />
+    <Content Include="Content\footter.css" />
+    <Content Include="Content\Loading.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\anh.png" />
@@ -224,6 +230,11 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </Content>
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -234,8 +245,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Loading.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Script.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -249,17 +263,34 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
-    <Content Include="Views\Collections\Index.cshtml" />
     <Content Include="Views\Users\Register.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Shared\_Layout-admin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Users\LoginAdmin.cshtml" />
+    <Content Include="Views\Admin\SelectCate.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Users\Error.cshtml" />
+    <Content Include="Views\Shared\_Loading.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\PageCF.cshtml" />
+    <Content Include="Views\Product\PageTra.cshtml" />
+    <Content Include="Views\Product\Menu.cshtml" />
+    <Content Include="Views\Cart\GetCartInfo.cshtml" />
+    <Content Include="Views\Cart\CartPartial.cshtml" />
+    <Content Include="Views\Home\QCsanpham.cshtml" />
+    <Content Include="Views\Product\Qcsanpham.cshtml" />
+    <Content Include="Views\Home\footer.cshtml" />
+    <Content Include="Views\Admin\qlUser.cshtml" />
+    <Content Include="Views\Admin\DeleteUSer.cshtml" />
+    <Content Include="Views\Users\Gioithieu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".gitignore\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\" />
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>

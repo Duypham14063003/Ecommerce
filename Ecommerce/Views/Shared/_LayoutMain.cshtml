@@ -7,9 +7,15 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <script src="~/Scripts/script.js"></script>
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- Toastr -->
 </head>
 <style>
     body {
@@ -42,7 +48,6 @@
             line-height: 14px;
             font-size: 14px;
             height: 35px;
-            /* transition: all ease-in-out 0.5s;*/
         }
 
             .nav-ul li a {
@@ -65,7 +70,18 @@
     .content {
         margin-top: 74px;
     }
-
+    /*btn cart*/
+    .cart{
+        position:absolute;
+        right:6%;
+    }
+    .cart i{
+        transition:all ease-in-out 0.5s;
+        cursor:pointer;
+    }
+        .cart i:hover {
+            color: #ea8025;
+        }
     /*footer*/
     .footer {
         width: 100%;
@@ -105,6 +121,7 @@
         }
 </style>
 <body>
+
     <div class="nav-top">
         <ul class="nav-ul">
             <li>
@@ -112,12 +129,12 @@
                     <img class="img-logo" src="~/Images/Logo.png" alt="#" />
                 </a>
             </li>
-            <li><a href="~/Collections">Cà phê</a></li>
-            <li><a href="/">Trà</a></li>
-            <li><a href="/">Cửa Hàng</a></li>
+            <li><a href="@Url.Action("PageCF","Product")">Cà phê</a></li>
+            <li><a href="@Url.Action("PageTra","Product")">Trà</a></li>
+            <li><a href="@Url.Action("Menu","Product")">Cửa Hàng</a></li>
             <li><a href="/">Giới Thiệu</a></li>
-            <li>
-                <i class="fas fa-cart-plus" style="font-size:22px"></i>
+            <li class="cart">
+                @Html.Action("CartPartial", "Cart")
             </li>
             <li class="button" style="right:0; position:absolute">
                 @if (Session["Ten"] == null)
@@ -125,11 +142,12 @@
                     <a href="@Url.Action("Login", "Users")">Đăng nhập</a>
 
                 }
-
                 else
                 {
-                    <a>@Session["Ten"]</a>
+                    <a style="margin-right:1em;">@Session["Ten"]</a>
+
                     <a class="button" style="right:0; position:absolute; margin-left:5px" href="@Url.Action("Logout","Users")">
+
                         <i class="fas fa-sign-out-alt"></i>
                     </a>
                 }
@@ -145,168 +163,14 @@
             @RenderBody()
         </div>
     </div>
+
     <!-- Footer -->
-    <footer class="text-center text-white" style="background-color: #000000D9">
-        <!-- Grid container -->
-        <div class="container p-4">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-
-                <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="fab fa-twitter"></i>
-                </a>
-
-                <!-- Google -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="fab fa-google"></i>
-                </a>
-
-                <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="fab fa-instagram"></i>
-                </a>
-
-                <!-- Linkedin -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-
-                <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="fab fa-google"></i>
-                </a>
-            </section>
-            <!-- Section: Social media -->
-            <!-- Section: Form -->
-            <section class="">
-                <form action="">
-                    <!--Grid row-->
-                    <div class="row d-flex justify-content-center">
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <!--Grid column-->
-                    </div>
-                    <!--Grid row-->
-                </form>
-            </section>
-            <!-- Section: Form -->
-            <!-- Section: Text -->
-            <section class="mb-4">
-                <p>
-                    Muốn nếm vị cà phê phải chờ đợi pha chế, đó là nét tinh hoa được chắt chiu lại mỗi giây sống chậm với cuộc đời.
-                </p>
-            </section>
-            <!-- Section: Text -->
-            <!-- Section: Links -->
-            <section class="">
-                <!--Grid row-->
-                <div class="row">
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase" style="font-size:16px">Thành Viên</h5>
-
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="#!" class="text-white text-decoration-none" style="font-size:15px">Phạm Ngọc Duy</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white text-decoration-none" style="font-size:15px">Trần Lê Khoa</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white text-decoration-none" style="font-size:15px">Huỳnh Nhật Minh</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white text-decoration-none" style="font-size:15px">Huỳnh Thái Hòa</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
-
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="#!" class="text-white">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
-
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="#!" class="text-white">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
-
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="#!" class="text-white">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-            </section>
-            <!-- Section: Links -->
-        </div>
-        <!-- Grid container -->
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white text-decoration-none">by_G2</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+    @Html.Action("footer", "Home")
     <!-- Footer -->
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <script src="~/Scripts/toastr.js"></script>
 </body>
 
 </html>

@@ -3,6 +3,8 @@
     ViewBag.Title = "The Coffee House";
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
+
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style>
     .slide {
@@ -13,7 +15,7 @@
         height: auto;
         display: flex;
         justify-content: center;
-        display:flex;
+        display: flex;
         padding-bottom: 24px;
     }
 
@@ -96,8 +98,10 @@
 
         .card-img-top:hover {
             transform: scale(1.1)
-}
+        }
 </style>
+
+
 
 <div class="slide">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -115,65 +119,67 @@
     </div>
 </div>
 
-<div class="home-content container mt-5 mb-5">
-    <table class="menu-home" style="border-spacing:12px;width:50%">
-        <tbody>
-            <tr>
-                <td colspan="2">
-                    <img class="banner" src="~/Images/banner.png" alt="#" />
-                </td>
+@Html.Action("QCsanpham", "Home");
 
-                <td>
-                    <div class="card-home">
-                        <img class="detail-image" src="~/Images/cafe.png" alt="#" />
-                        <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
-                        <span style="color:#ccc">69.000đ</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="card-home">
-                        <img class="detail-image" src="~/Images/cafe.png" alt="#" />
-                        <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
-                        <span style="color:#ccc">69.000đ</span>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="card-home">
-                        <img class="detail-image" src="~/Images/cafe.png" alt="#" />
-                        <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
-                        <span style="color:#ccc">69.000đ</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="card-home">
-                        <img class="detail-image" src="~/Images/cafe.png" alt="#" />
-                        <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
-                        <span style="color:#ccc">69.000đ</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="card-home">
-                        <img class="detail-image" src="~/Images/cafe.png" alt="#" />
-                        <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
-                        <span style="color:#ccc">69.000đ</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="card-home">
-                        <img class="detail-image" src="~/Images/cafe.png" alt="#" />
-                        <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
-                        <span style="color:#ccc">69.000đssss</span>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+@*<div class="home-content container mt-5 mb-5">
+        <table class="menu-home" style="border-spacing:12px;width:50%">
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <img class="banner" src="~/Images/banner.png" alt="#" />
+                    </td>
 
-</div>
+                    <td>
+                        <div class="card-home">
+                            <img class="detail-image" src="~/Images/cafe.png" alt="#" />
+                            <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
+                            <span style="color:#ccc">69.000đ</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card-home">
+                            <img class="detail-image" src="~/Images/cafe.png" alt="#" />
+                            <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
+                            <span style="color:#ccc">69.000đ</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card-home">
+                            <img class="detail-image" src="~/Images/cafe.png" alt="#" />
+                            <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
+                            <span style="color:#ccc">69.000đ</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card-home">
+                            <img class="detail-image" src="~/Images/cafe.png" alt="#" />
+                            <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
+                            <span style="color:#ccc">69.000đ</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card-home">
+                            <img class="detail-image" src="~/Images/cafe.png" alt="#" />
+                            <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
+                            <span style="color:#ccc">69.000đ</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card-home">
+                            <img class="detail-image" src="~/Images/cafe.png" alt="#" />
+                            <a style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif">The Coffe House Sữa Đá</a>
+                            <span style="color:#ccc">69.000đssss</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-<div class="container mb-5 overflow-hidden " >
+    </div>*@
+
+<div class="container mb-5 overflow-hidden ">
     <div class="gioi-thieu"></div>
 </div>
 
@@ -275,7 +281,7 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 

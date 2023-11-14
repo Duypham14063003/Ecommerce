@@ -75,5 +75,48 @@ namespace DoAn.Controllers
             Session.Clear();
             return RedirectToAction("Index","Home");
         }
+
+        [HttpGet]
+        public ActionResult LoginAdmin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult LoginAdmin(AdminUser ad)
+        {
+            if (ModelState.IsValid)
+            {
+                if (string.IsNullOrEmpty(ad.NameUser))
+                    ModelState.AddModelError(string.Empty, "Tên đăng nhập này không được để trống");
+                if (string.IsNullOrEmpty(ad.PasswordUser))
+                    ModelState.AddModelError(string.Empty, "Mật khẩu không được để trống");
+                if (ModelState.IsValid)
+                {
+                    var admin = database.AdminUsers.FirstOrDefault(s => s.NameUser == ad.NameUser && s.PasswordUser == ad.PasswordUser);
+                    if (admin != null)
+                    {
+                        Session["TenAD"] = admin.NameUser;
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else
+                       ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng! Vui lòng kiểm tra lại";
+                }
+            }
+            return View();
+        }
+
+        public ActionResult Error()
+        {
+            return View();
+        }
+        
+
+        //Loix 
+        public ActionResult Gioithieu()
+        {
+            return View();
+        }
+
     }
 }
+
